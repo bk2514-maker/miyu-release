@@ -119,9 +119,43 @@ nav{color:#c7d4e5}nav a:hover{color:#9bcaff}nav a:first-child:after{background:#
 details{background:#131c29;border-color:var(--line)}footer{background:#0e1520;border-color:var(--line)}footer .brand img{width:49px;height:36px}
 @media(max-width:650px){.hero{height:345px;min-height:345px}.hero>.coast-photo{width:100%;object-fit:cover;object-position:45% 55%;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 13%,rgba(0,0,0,.7) 30%,#000 50%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 13%,rgba(0,0,0,.7) 30%,#000 50%)}.hero:before{background:linear-gradient(90deg,#0b1018dc 0%,#0b10186b 30%,transparent 78%),linear-gradient(0deg,#0b1018,transparent 35%)}.hero h1{max-width:70%;font-size:35px}.brand img{width:49px;height:36px}}
 
+
+/* Seamless panoramic coast: use the existing ocean and distant islands, not a stretched image. */
+.hero{height:clamp(435px,26vw,560px);min-height:435px;background:#0b1018;overflow:hidden}
+.hero>.coast-photo{
+  inset:0 0 0 auto;
+  width:78%;
+  height:100%;
+  max-width:none;
+  display:block;
+  object-fit:cover;
+  object-position:100% 84%;
+  background:#0b1018;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.03) 5%,rgba(0,0,0,.13) 10%,rgba(0,0,0,.36) 16%,rgba(0,0,0,.65) 22%,rgba(0,0,0,.87) 28%,#000 34%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.03) 5%,rgba(0,0,0,.13) 10%,rgba(0,0,0,.36) 16%,rgba(0,0,0,.65) 22%,rgba(0,0,0,.87) 28%,#000 34%,#000 100%);
+}
+.hero:before{
+  background:linear-gradient(90deg,#0b1018 0%,#0b1018 22%,rgba(11,16,24,.89) 30%,rgba(11,16,24,.52) 38%,rgba(11,16,24,.12) 45%,transparent 51%),
+             linear-gradient(0deg,#0b1018 0%,rgba(11,16,24,.68) 6%,rgba(11,16,24,.28) 17%,transparent 31%);
+}
+.hero .wrap{padding-bottom:24px}
+.hero h1{text-shadow:0 2px 18px #0b101866}
+@media(min-width:2100px){.hero{height:clamp(560px,25vw,680px)}}
+@media(max-width:1050px){
+  .hero{height:435px;min-height:435px}
+  .hero>.coast-photo{width:86%;object-position:100% 75%}
+  .hero:before{background:linear-gradient(90deg,#0b1018 0%,rgba(11,16,24,.86) 22%,rgba(11,16,24,.30) 45%,transparent 64%),linear-gradient(0deg,#0b1018,transparent 30%)}
+}
+@media(max-width:650px){
+  .hero{height:345px;min-height:345px}
+  .hero>.coast-photo{width:100%;object-fit:cover;object-position:43% 78%;-webkit-mask-image:none;mask-image:none}
+  .hero:before{background:linear-gradient(90deg,rgba(11,16,24,.94) 0%,rgba(11,16,24,.72) 20%,rgba(11,16,24,.20) 55%,transparent 83%),linear-gradient(0deg,#0b1018,rgba(11,16,24,.38) 13%,transparent 34%)}
+  .hero h1{max-width:72%}
+}
+
 </style></head><body>
 <header><div class="wrap"><a class="brand" href="./"><img src="logo.svg?v=dark1" alt=""><span>MIYU</span></a><nav aria-label="메뉴"><a href="./">홈</a><a href="#programs">프로그램</a><a href="#updates">업데이트</a><a href="#guide" id="guide-link">사용 가이드</a><a href="https://github.com/bk2514-maker/miyu-release/issues">문의</a></nav></div></header>
-<main><svg class="ambient-waves" viewBox="0 0 1600 800" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wave-ink" x1="0%" x2="100%"><stop offset="0%" stop-color="#b3d5ff"/><stop offset="18%" stop-color="#72a9e9" stop-opacity=".9"/><stop offset="42%" stop-color="#88b6ef" stop-opacity=".12"/><stop offset="67%" stop-color="#a4c9f4" stop-opacity=".12"/><stop offset="87%" stop-color="#7faeea"/><stop offset="100%" stop-color="#b9dcff"/></linearGradient><filter id="wave-glow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="13"/></filter><filter id="wave-soft" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="3.5"/></filter><radialGradient id="wave-halo"><stop stop-color="#8ebff7" stop-opacity=".30"/><stop offset="100%" stop-color="#86b9ef" stop-opacity="0"/></radialGradient></defs><ellipse cx="0" cy="385" rx="390" ry="170" fill="url(#wave-halo)"/><ellipse cx="1600" cy="270" rx="430" ry="190" fill="url(#wave-halo)"/><ellipse cx="1600" cy="700" rx="470" ry="180" fill="url(#wave-halo)"/><g fill="none" stroke="url(#wave-ink)"><path d="M-45 450 C190 275 355 345 650 390 S1220 520 1645 220" stroke-width="36" opacity=".85" filter="url(#wave-glow)"/><path d="M-45 450 C190 275 355 345 650 390 S1220 520 1645 220" stroke-width="7" opacity=".9" filter="url(#wave-soft)"/><path d="M-45 450 C190 275 355 345 650 390 S1220 520 1645 220" stroke-width="1.8"/><path d="M620 850 C1030 810 1350 780 1645 585" stroke-width="32" opacity=".85" filter="url(#wave-glow)"/><path d="M620 850 C1030 810 1350 780 1645 585" stroke-width="7" opacity=".8" filter="url(#wave-soft)"/><path d="M620 850 C1030 810 1350 780 1645 585" stroke-width="1.8"/></g></svg><section class="hero"><img class="coast-photo" src="miyu-coast.jpg" alt="푸른 바닷가 산책로를 걷는 미유"><div class="wrap"><h1>더 쉽고, <span>더 편리한</span></h1><div class="signature">Miyu</div></div></section>
+<main><svg class="ambient-waves" viewBox="0 0 1600 800" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wave-ink" x1="0%" x2="100%"><stop offset="0%" stop-color="#b3d5ff"/><stop offset="18%" stop-color="#72a9e9" stop-opacity=".9"/><stop offset="42%" stop-color="#88b6ef" stop-opacity=".12"/><stop offset="67%" stop-color="#a4c9f4" stop-opacity=".12"/><stop offset="87%" stop-color="#7faeea"/><stop offset="100%" stop-color="#b9dcff"/></linearGradient><filter id="wave-glow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="13"/></filter><filter id="wave-soft" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="3.5"/></filter><radialGradient id="wave-halo"><stop stop-color="#8ebff7" stop-opacity=".30"/><stop offset="100%" stop-color="#86b9ef" stop-opacity="0"/></radialGradient></defs><ellipse cx="0" cy="385" rx="390" ry="170" fill="url(#wave-halo)"/><ellipse cx="1600" cy="270" rx="430" ry="190" fill="url(#wave-halo)"/><ellipse cx="1600" cy="700" rx="470" ry="180" fill="url(#wave-halo)"/><g fill="none" stroke="url(#wave-ink)"><path d="M-45 450 C190 275 355 345 650 390 S1220 520 1645 220" stroke-width="36" opacity=".85" filter="url(#wave-glow)"/><path d="M-45 450 C190 275 355 345 650 390 S1220 520 1645 220" stroke-width="7" opacity=".9" filter="url(#wave-soft)"/><path d="M-45 450 C190 275 355 345 650 390 S1220 520 1645 220" stroke-width="1.8"/><path d="M620 850 C1030 810 1350 780 1645 585" stroke-width="32" opacity=".85" filter="url(#wave-glow)"/><path d="M620 850 C1030 810 1350 780 1645 585" stroke-width="7" opacity=".8" filter="url(#wave-soft)"/><path d="M620 850 C1030 810 1350 780 1645 585" stroke-width="1.8"/></g></svg><section class="hero"><img class="coast-photo" src="miyu-coast.jpg?v=panorama2" alt="푸른 바다와 섬이 보이는 산책로를 걷는 미유" fetchpriority="high"><div class="wrap"><h1>더 쉽고, <span>더 편리한</span></h1><div class="signature">Miyu</div></div></section>
 <div class="wrap"><div class="dashboard"><section class="programs" id="programs" aria-label="프로그램 다운로드">
 <article class="card product" id="miyualert"><div class="symbol"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 4H4v7M25 4h3v7M4 21v7h7M28 21v7h-7M5 16s4-8 11-8 11 8 11 8-4 8-11 8S5 16 5 16Z"/><circle cx="16" cy="16" r="3.5"/></svg></div><div><h2>Miyu Alert</h2><span class="version">v0.0.10 PGE</span><p>지정한 이미지가 화면에 나타나면 즉시 알려주는 실시간 감시 알림 프로그램</p><div class="details">Windows 64bit · 약 184.3 MB</div></div><div class="action"><a class="download" href="https://github.com/bk2514-maker/miyu-release/releases/download/miyualert-v0.0.10-pge/MiyuAlert_v0.0.10_PGE_Setup.exe"><svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></svg><span>Download</span></a></div></article>
 <article class="card product" id="miyulink"><div class="symbol"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="5" width="12" height="10" rx="2"/><rect x="18" y="17" width="12" height="10" rx="2"/><path d="M8 15v4m-4 0h8m12 8v3m-4 0h8M18 8h8v5m-3-3 3 3 3-3M14 24H6v-4"/></svg></div><div><h2>Miyu Link</h2><span class="version">v0.0.9 PGE</span><p>두 대의 컴퓨터를 하나처럼 연결하는 프로그램</p><p class="mobile-note">휴대폰 원격 연결 지원 · Tailscale 필요</p><div class="details">Windows 64bit · 약 84.6 MB</div></div><div class="action dual-download"><a class="download windows" href="https://github.com/bk2514-maker/miyu-release/releases/download/miyulink-v0.0.9-pge/MiyuLink_v0.0.9_PGE_Setup.exe"><svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></svg><span>Windows</span></a><a class="download android" href="https://github.com/bk2514-maker/miyu-release/releases/download/miyulink-mobile-v0.0.20/MiyuLink_Mobile_v0.0.20.apk" id="android-download"><svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></svg><span>Android</span></a></div></article></section>
